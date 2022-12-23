@@ -10,7 +10,6 @@ public class MasterarbeitApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MasterarbeitApplication.class, args);
-		System.out.println(LocalDate.now());
 	}
 
 }
