@@ -56,6 +56,7 @@ public class EntryService {
             for(int i=0; i<foods.size(); i++) {
                 if(foodName.equals(foods.get(i).getFood_name())) {
                     foods.remove(foods.get(i));
+                    break;
                 }
             }
         }
