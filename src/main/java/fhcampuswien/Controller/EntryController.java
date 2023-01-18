@@ -23,9 +23,13 @@ public class EntryController {
 
     @PostMapping("/entry")
     public ResponseEntity<Entry> addFoodToEntry(@RequestBody Food food,
+                          @RequestParam int amount,
                           @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date,
                           @RequestParam Meal meal) {
-        return new ResponseEntity<>(entryService.addFoodToEntry(date, food, meal), HttpStatus.OK);
+        for(int i=0; i<amount; i++) {
+            entryService.addFoodToEntry(date, food, meal);
+        }
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @DeleteMapping("/entry")
